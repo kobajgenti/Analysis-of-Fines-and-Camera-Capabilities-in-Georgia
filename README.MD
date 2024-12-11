@@ -5,7 +5,6 @@ This project explores traffic fines, camera capabilities, license plate types (c
 kjgenti@bu.edu // koba@borbalo.ge
 
 ## Table of Contents
-## Table of Contents
 - [Introduction](#introduction)
  - [Geographical and Monetary Context](#geographical-and-monetary-context)
  - [From Research to Practical Application](#from-research-to-practical-application)
