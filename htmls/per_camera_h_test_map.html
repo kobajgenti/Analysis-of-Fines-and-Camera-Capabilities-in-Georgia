@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8bd39d2cc0ba5860e04d2270eabdcc4c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; right: 50px; 
+            border:2px solid grey; z-index:9999; font-size:14px;
+            background-color:white;
+            padding: 10px;
+            border-radius: 5px;">
+    <p><strong>Per Camera Hypotesis Test</strong></p>
+    <p>
+        <i style="background: red; border-radius: 50%; width: 10px; height: 10px; display: inline-block;"></i> Custom plates pay more (p < 0.05)<br>
+        <i style="background: blue; border-radius: 50%; width: 10px; height: 10px; display: inline-block;"></i> Custom plates pay less (p < 0.05)<br>
+        <i style="background: gray; border-radius: 50%; width: 10px; height: 10px; display: inline-block;"></i> No significant difference
+    </p>
+</div>
+    
+            <div class="folium-map" id="map_8bd39d2cc0ba5860e04d2270eabdcc4c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8bd39d2cc0ba5860e04d2270eabdcc4c = L.map(
+                "map_8bd39d2cc0ba5860e04d2270eabdcc4c",
+                {
+                    center: [41.7151, 44.8271],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b03108c500d7279293ffb735f215422e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_b03108c500d7279293ffb735f215422e.addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+            var circle_marker_f27e6ef6b460ffff4eb4e4d8f61fd529 = L.circleMarker(
+                [41.647005, 44.90759],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_db59d42a81d3b984db7c92b074a04d80 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc5a4f8d532afb90967690c4e03cab38 = $(`<div id="html_bc5a4f8d532afb90967690c4e03cab38" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 56.00 GEL<br>     - Sample size: 8<br>     <b>Regular Plates:</b><br>     - Average: 49.34 GEL<br>     - Sample size: 939<br>     <b>Difference:</b> 6.66 GEL<br>     <b>P-value:</b> 0.8012     </div>`)[0];
+                popup_db59d42a81d3b984db7c92b074a04d80.setContent(html_bc5a4f8d532afb90967690c4e03cab38);
+            
+        
+
+        circle_marker_f27e6ef6b460ffff4eb4e4d8f61fd529.bindPopup(popup_db59d42a81d3b984db7c92b074a04d80)
+        ;
+
+        
+    
+    
+            var circle_marker_e4d1ac01c64d0ddfe486ada17570bbbd = L.circleMarker(
+                [41.68888, 44.928904],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_84e7ae48162d9cc56d9bc55c880d21e5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_90bd42520eb976dcd4e0eb41a93fd7f5 = $(`<div id="html_90bd42520eb976dcd4e0eb41a93fd7f5" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 20.00 GEL<br>     - Sample size: 7<br>     <b>Regular Plates:</b><br>     - Average: 43.20 GEL<br>     - Sample size: 859<br>     <b>Difference:</b> -23.20 GEL<br>     <b>P-value:</b> 0.0767     </div>`)[0];
+                popup_84e7ae48162d9cc56d9bc55c880d21e5.setContent(html_90bd42520eb976dcd4e0eb41a93fd7f5);
+            
+        
+
+        circle_marker_e4d1ac01c64d0ddfe486ada17570bbbd.bindPopup(popup_84e7ae48162d9cc56d9bc55c880d21e5)
+        ;
+
+        
+    
+    
+            var circle_marker_5f0618f9791a20a58991d08ea82067e0 = L.circleMarker(
+                [41.714636, 44.799805],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_5d601e2e8066b1567cb444b054b62c8c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7bd2f72ffda4663e5a9768f252c8264b = $(`<div id="html_7bd2f72ffda4663e5a9768f252c8264b" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 18.00 GEL<br>     - Sample size: 6<br>     <b>Regular Plates:</b><br>     - Average: 22.48 GEL<br>     - Sample size: 1976<br>     <b>Difference:</b> -4.48 GEL<br>     <b>P-value:</b> 0.7502     </div>`)[0];
+                popup_5d601e2e8066b1567cb444b054b62c8c.setContent(html_7bd2f72ffda4663e5a9768f252c8264b);
+            
+        
+
+        circle_marker_5f0618f9791a20a58991d08ea82067e0.bindPopup(popup_5d601e2e8066b1567cb444b054b62c8c)
+        ;
+
+        
+    
+    
+            var circle_marker_60cec6b2a31242fa1c1cb16aa567de08 = L.circleMarker(
+                [41.716559, 44.750562],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_6019eecb9d9b9b4ef84edb4d1d63614b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91645eb5933314314260898834d85360 = $(`<div id="html_91645eb5933314314260898834d85360" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 19.71 GEL<br>     - Sample size: 7<br>     <b>Regular Plates:</b><br>     - Average: 35.68 GEL<br>     - Sample size: 1542<br>     <b>Difference:</b> -15.96 GEL<br>     <b>P-value:</b> 0.9541     </div>`)[0];
+                popup_6019eecb9d9b9b4ef84edb4d1d63614b.setContent(html_91645eb5933314314260898834d85360);
+            
+        
+
+        circle_marker_60cec6b2a31242fa1c1cb16aa567de08.bindPopup(popup_6019eecb9d9b9b4ef84edb4d1d63614b)
+        ;
+
+        
+    
+    
+            var circle_marker_945a95af34d67b5e44ddc22f091036fb = L.circleMarker(
+                [41.718524, 44.749536],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_8feaad9be39279612c367a48d9be69ea = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b3458ee38d14a8d9012dfdddd2d2f3e1 = $(`<div id="html_b3458ee38d14a8d9012dfdddd2d2f3e1" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 82.00 GEL<br>     - Sample size: 10<br>     <b>Regular Plates:</b><br>     - Average: 101.14 GEL<br>     - Sample size: 808<br>     <b>Difference:</b> -19.14 GEL<br>     <b>P-value:</b> 0.0104     </div>`)[0];
+                popup_8feaad9be39279612c367a48d9be69ea.setContent(html_b3458ee38d14a8d9012dfdddd2d2f3e1);
+            
+        
+
+        circle_marker_945a95af34d67b5e44ddc22f091036fb.bindPopup(popup_8feaad9be39279612c367a48d9be69ea)
+        ;
+
+        
+    
+    
+            var circle_marker_61742d55d5f91f46b8c8150ba0b636df = L.circleMarker(
+                [41.720848, 44.78634],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_97af9b733cb3e0acbf314dce54e2d1b4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e8e9847139fb27ca1b8215ed8dec70f4 = $(`<div id="html_e8e9847139fb27ca1b8215ed8dec70f4" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 21.33 GEL<br>     - Sample size: 24<br>     <b>Regular Plates:</b><br>     - Average: 21.23 GEL<br>     - Sample size: 1319<br>     <b>Difference:</b> 0.10 GEL<br>     <b>P-value:</b> 0.7776     </div>`)[0];
+                popup_97af9b733cb3e0acbf314dce54e2d1b4.setContent(html_e8e9847139fb27ca1b8215ed8dec70f4);
+            
+        
+
+        circle_marker_61742d55d5f91f46b8c8150ba0b636df.bindPopup(popup_97af9b733cb3e0acbf314dce54e2d1b4)
+        ;
+
+        
+    
+    
+            var circle_marker_1c33e5ec8b617be19bcd44aea68094e2 = L.circleMarker(
+                [41.734242, 44.762159],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_d5fd848808fb7bfe13590ba148144973 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ccaebe39505d844be3e588c3ea7b4941 = $(`<div id="html_ccaebe39505d844be3e588c3ea7b4941" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 72.00 GEL<br>     - Sample size: 8<br>     <b>Regular Plates:</b><br>     - Average: 91.73 GEL<br>     - Sample size: 315<br>     <b>Difference:</b> -19.73 GEL<br>     <b>P-value:</b> 0.0198     </div>`)[0];
+                popup_d5fd848808fb7bfe13590ba148144973.setContent(html_ccaebe39505d844be3e588c3ea7b4941);
+            
+        
+
+        circle_marker_1c33e5ec8b617be19bcd44aea68094e2.bindPopup(popup_d5fd848808fb7bfe13590ba148144973)
+        ;
+
+        
+    
+    
+            var circle_marker_add8a3ba8e5b985e0939e99633fc3d44 = L.circleMarker(
+                [41.738945, 44.772984],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_2018b3522810ff0c99b9273b9bb057c8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fc5e5465c81923d44510993d01c10dd5 = $(`<div id="html_fc5e5465c81923d44510993d01c10dd5" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 18.73 GEL<br>     - Sample size: 22<br>     <b>Regular Plates:</b><br>     - Average: 21.10 GEL<br>     - Sample size: 1086<br>     <b>Difference:</b> -2.37 GEL<br>     <b>P-value:</b> 0.0602     </div>`)[0];
+                popup_2018b3522810ff0c99b9273b9bb057c8.setContent(html_fc5e5465c81923d44510993d01c10dd5);
+            
+        
+
+        circle_marker_add8a3ba8e5b985e0939e99633fc3d44.bindPopup(popup_2018b3522810ff0c99b9273b9bb057c8)
+        ;
+
+        
+    
+    
+            var circle_marker_44aca7744ea3bba87e30cedfd59370f1 = L.circleMarker(
+                [41.753392, 44.777118],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_8bd39d2cc0ba5860e04d2270eabdcc4c);
+        
+    
+        var popup_7004b03628bb3d3af1aaf085217a58b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_273a50d2015b058488741fc4880ea3b9 = $(`<div id="html_273a50d2015b058488741fc4880ea3b9" style="width: 100.0%; height: 100.0%;">     <b>Camera Analysis</b><br>     <b>Custom Plates:</b><br>     - Average: 50.00 GEL<br>     - Sample size: 12<br>     <b>Regular Plates:</b><br>     - Average: 23.88 GEL<br>     - Sample size: 1651<br>     <b>Difference:</b> 26.12 GEL<br>     <b>P-value:</b> 0.0484     </div>`)[0];
+                popup_7004b03628bb3d3af1aaf085217a58b0.setContent(html_273a50d2015b058488741fc4880ea3b9);
+            
+        
+
+        circle_marker_44aca7744ea3bba87e30cedfd59370f1.bindPopup(popup_7004b03628bb3d3af1aaf085217a58b0)
+        ;
+
+        
+    
+</script>
+</html>
