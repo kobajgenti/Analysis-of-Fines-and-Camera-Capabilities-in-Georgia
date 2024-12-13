@@ -58,7 +58,7 @@ This exploration allowed me to combine data analysis with meaningful, real-world
 ### Context
 In Georgia, certain "smart" traffic cameras detect vehicles with overdue technical inspections and issue automatic fines. For drivers who have missed their inspection date or require additional time to complete their inspection, these fines can accumulate rapidly, creating unnecessary financial burden.
 
-Our solution addresses this challenge through Mapbox's Directions API and its powerful exclude parameter. We have developed a prototype navigation feature that enables drivers to temporarily avoid these inspection-checking cameras until they can schedule their inspection, providing a short-term solution that balances compliance requirements with practical considerations.
+My solution addresses this challenge through Mapbox's Directions API and its powerful exclude parameter. I have developed a prototype navigation feature that enables drivers to temporarily avoid these inspection-checking cameras until they can schedule their inspection, providing a short-term solution that balances compliance requirements with practical considerations.
 
 [![Demo App Video](https://img.youtube.com/vi/fU6iGGG938Y/hqdefault.jpg)](https://youtube.com/shorts/fU6iGGG938Y)
 
